@@ -1,0 +1,61 @@
+
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Be My Valentine?</title>
+<style>
+    body {
+        font-family: "Comic Sans MS", cursive, sans-serif;
+        text-align: center;
+        margin-top: 100px;
+        background: #ffe6e6;
+    }
+    h1 {
+        color: #d6006c;
+    }
+    .btn {
+        padding: 15px 30px;
+        font-size: 20px;
+        border: none;
+        cursor: pointer;
+        border-radius: 8px;
+        margin: 20px;
+        transition: .3s ease;
+    }
+    #yesBtn {
+        background: #ff3366;
+        color: white;
+    }
+    #noBtn {
+        background: #ddd;
+        position: relative;
+    }
+</style>
+</head>
+<body>
+
+<h1>Will you be my Valentine? 💘</h1>
+<button id="yesBtn" class="btn">Yes ❤️</button>
+<button id="noBtn" class="btn">No 😐</button>
+
+<script>
+const noBtn = document.getElementById("noBtn");
+
+// Move the "No" button when mouse gets near
+noBtn.addEventListener("mouseover", () => {
+    const x = Math.random() * (window.innerWidth - noBtn.clientWidth - 20);
+    const y = Math.random() * (window.innerHeight - noBtn.clientHeight - 20);
+    noBtn.style.position = "absolute";
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+});
+
+// Show a cute message if yes is clicked
+document.getElementById("yesBtn").addEventListener("click", () => {
+    alert("Yay! 💕 I’m so happy! 😍");
+});
+</script>
+
+</body>
+</html>
